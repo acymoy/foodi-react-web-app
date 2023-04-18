@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import Hello from './hello';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+
+// Component imports
+import Foodi from './foodi';
+
+// Bootstrap and Font Awesome imports
+import 'bootswatch/dist/simplex/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='container'>
+        <Routes>
+          <Route path='/*'
+            element={<Foodi />} />
+          <Route path='/hello'
+            element={<Hello />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
