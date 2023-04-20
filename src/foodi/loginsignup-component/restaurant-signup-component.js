@@ -4,6 +4,7 @@ const RestaurantSignup = () => {
     const [formData, setFormData] = useState({
         restaurantName: '',
         email: '',
+        password: '',
         openDate: '',
         cuisine: '',
         address: '',
@@ -47,6 +48,17 @@ const RestaurantSignup = () => {
                     value={formData.email}
                     onChange={handleChange}
                 />
+            </div>
+            <div className="form-group">
+                <label htmlFor="signupPassword">Password</label>
+                <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    placeholder="Password" required />
             </div>
             <div className="form-group">
                 <label htmlFor="openDate">Open Date</label>

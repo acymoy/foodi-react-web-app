@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const TopComponent = () => {
-    const {pathname} = useLocation();
+    const { pathname } = useLocation();
     const paths = pathname.split('/');
     const active = paths[1];
 
@@ -21,9 +21,6 @@ const TopComponent = () => {
                     <ul className="navbar-nav me-auto w-75 mb-2 mb-lg-0">
                         <Link to='/home' className='nav-item'>
                             <a className={`nav-link ${(active === 'home' || active === '') ? 'active' : ''}`} aria-current="page">Home</a>
-                        </Link>
-                        <Link to='/feed' className='nav-item'>
-                            <a className={`nav-link ${active === 'feed' ? 'active' : ''}`}>My Feed</a>
                         </Link>
                         <Link to='/articles' className='nav-item'>
                             <a className={`nav-link ${active === 'articles' ? 'active' : ''}`}>Articles</a>

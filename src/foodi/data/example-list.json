@@ -1,0 +1,20 @@
+[
+    {
+        "_id": 1,
+        "name": "Boston Must-Eats",
+        "description": "The best places to eat in Boston",
+        "length": 3
+    },
+    {
+        "_id": 2,
+        "name": "Boston Must-Drinks",
+        "description": "The best places to drink in Boston",
+        "length": 2
+    },
+    {
+        "_id": 3,
+        "name": "Boston Must-Plays",
+        "description": "The best places to play in Boston",
+        "length": 1
+    }
+]

@@ -39,8 +39,6 @@ function Foodi() {
                <Route path = 'profile/*' element={<ProfileComponent />} />
                {/*
                TODO:: Implement the rest of the routes
-
-               <Route path='feed' element={<FeedComponent />} />
                
                <Route path = 'post' element={<PostComponent />} />
                <Route path = 'edit-profile' element={<EditProfileComponent />} />

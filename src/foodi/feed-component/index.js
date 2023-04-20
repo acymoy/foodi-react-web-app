@@ -1,6 +1,6 @@
 import React from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import exampleFeed from './example-feed.json';
+import exampleFeed from '../data/example-feed.json';
 
 // Component imports
 import FeedTileComponent from "../feed-tile-component";
