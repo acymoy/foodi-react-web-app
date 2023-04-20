@@ -4,9 +4,18 @@ import { Routes, Route } from 'react-router';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
 
+// MOTD import
+
 // Component imports
-import Hello from '../hello';
+import Hello from './hello';
 import TopComponent from './top-component';
+import FeaturedComponent from "./featured-component";
+import FeedComponent from "./feed-component";
+import HomeComponent from './home-component';
+import ArticlesComponent from './articles-component';
+import LoginComponent from './loginsignup-component';
+import ProfileComponent from './profile-component';
+
 
 //const store = configureStore(
 //   { reducer: { who: whoReducer, tuits: tuitsReducer, profile: profileReducer, posts: postsReducer, tuitsData: tuitsReducer } }
@@ -18,32 +27,28 @@ function Foodi() {
    return (
       //<Provider store={store}>
       <div>
-        <div className = 'row'>
-            <TopComponent/>
-        </div>
-        {/*
-        <div className="row mt-2">
-            <div className="col-10 col-lg-7 col-xl-6">
-               <Routes>
-                  <Route index element={<HomeComponent />} />
-                  <Route path='home' element={<HomeComponent />} />
-                  <Route path='explore' element={<ExploreComponent />} />
-                  <Route path='profile' element={<ProfileComponent />} />
-                  <Route path='edit-profile' element={<EditProfileComponent />} />
-               </Routes>
-            </div>
+         <div className='row'>
+            <TopComponent />
+         </div>
+         <div>
+            <Routes>
+               <Route index element={<HomeComponent />} />
+               <Route path='home' element={<HomeComponent />} />
+               <Route path = 'articles' element={<ArticlesComponent />} />
+               <Route path = 'login/*' element={<LoginComponent />} />
+               <Route path = 'profile/*' element={<ProfileComponent />} />
+               {/*
+               TODO:: Implement the rest of the routes
 
-            <div className="d-none d-sm-none d-md-none d-lg-block col-lg-4 col-xl-3">
-               <Hello />
-            </div>
-        </div>
-        */  }
-        
-         
-        
-         
+               <Route path='feed' element={<FeedComponent />} />
+               
+               <Route path = 'post' element={<PostComponent />} />
+               <Route path = 'edit-profile' element={<EditProfileComponent />} />
+               */}
+            </Routes>
+         </div>
       </div>
-         
+
       //</Provider>
 
 

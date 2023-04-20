@@ -1,0 +1,35 @@
+[
+    {
+        "_id": 123,
+        "title": "I Make These Breakfast Noodles When I want To Transport to My Ancestral Homeland",
+        "author": "Megan Zhang",
+        "date": "2019-01-01",
+        "summary": "This is a short summary of the article",
+        "thumbnail": "https://www.saveur.com/uploads/2023/03/28/RiseandDine_Jiangnan_FEATURE.jpg?auto=webp&crop=4%3A5&auto=webp&optimize=high&quality=70&width=1440"
+    },
+    {
+        "_id": 456,
+        "title": "For Me, Self-Care Means Deep Frying for One",
+        "author": "Peter Som",
+        "date": "2019-01-02",
+        "summary": "This is a short summary of the article",
+        "thumbnail": "https://www.saveur.com/uploads/2023/03/21/Peter-Som-Saveur-06.jpg?auto=webp&crop=4%3A5&auto=webp&optimize=high&quality=70&width=560&dpr=1&crop=4%3A5"
+    },
+    {
+        "_id": 234,
+        "title": "Chocolate Beyond the Bean",
+        "author": "Megan Zhang",
+        "date": "2019-01-03",
+        "summary": "This is a short summary of the article",
+        "thumbnail": "https://www.saveur.com/uploads/2023/02/14/00-LEAD-Cacao-blue-stripes-scaled.jpg?auto=webp&crop=4%3A5%2Coffset-x50%2Coffset-y75&auto=webp&optimize=high&quality=70&width=560&dpr=1&crop=4%3A5"
+    },
+    {
+        "_id": 345,
+        "title": "Everything You Need to Know About Basil Pesto",
+        "author": "Erica Firpo",
+        "date": "2019-01-04",
+        "summary": "This is a short summary of the article",
+        "thumbnail": "https://www.saveur.com/uploads/2017/09/01/90sFeatureImage_Pesto.jpg?auto=webp&crop=4%3A5&auto=webp&optimize=high&quality=70&width=560&dpr=1&crop=4%3A5"
+    }
+
+]
