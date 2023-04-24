@@ -21,11 +21,15 @@ import ProfileComponent from './profile-component';
 //   { reducer: { who: whoReducer, tuits: tuitsReducer, profile: profileReducer, posts: postsReducer, tuitsData: tuitsReducer } }
 //);
 
+const store = configureStore(
+   {}
+);
+
 // Loads the Foodi webpage. Imports into index.js in the src folder, which is, in turn, taken by App.js.
 // This page should be handling the Routes and the providers, reducers, etc etc. Basically everything.
 function Foodi() {
    return (
-      //<Provider store={store}>
+      <Provider store={store}>
       <div>
          <div className='row'>
             <TopComponent />
@@ -47,7 +51,7 @@ function Foodi() {
          </div>
       </div>
 
-      //</Provider>
+      </Provider>
 
 
    )
