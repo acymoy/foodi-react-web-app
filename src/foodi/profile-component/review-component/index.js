@@ -21,7 +21,7 @@ const Reviews = (userID) => {
 
     return (
         <div className="">
-            <h3>Reviews ({posts.length})</h3>
+            <h3>Posts ({posts.length})</h3>
             {posts.map(x => <ReviewTile key={x._id} review={x} />)}
         </div>
     )

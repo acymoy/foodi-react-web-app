@@ -18,6 +18,12 @@ export const findPost = async (userID) => {
     return posts
 }
 
+export const findRestaurantPosts = async (userID) => {
+    const response = await axios.get(`${POST_API}/restaurant/${userID}`)
+    const posts = response.data
+    return posts
+}
+
 // gets posts by followed users
 export const findFollowedPosts = async (userID) => {
     const response = await axios.get(`${POST_API}/followed/${userID}`)

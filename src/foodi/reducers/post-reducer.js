@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import {
     findAllPostsThunk, deletePostThunk,
-    createPostThunk, findPostThunk, findFollowedPostsThunk
+    createPostThunk, findPostThunk, findFollowedPostsThunk,
+    findRestaurantPostsThunk
 } from '../../services/posts-thunks'
 
 // example import
@@ -98,6 +99,22 @@ const postSlice = createSlice({
                 state.userPosts = []
             },
         [findFollowedPostsThunk.rejected]:
+            (state, action) => {
+                state.loading = false
+                state.error = action.error
+            },
+        
+        [findRestaurantPostsThunk.fulfilled]:
+            (state, { payload }) => {
+                state.loading = false
+                state.posts = payload
+            },
+        [findRestaurantPostsThunk.pending]:
+            (state) => {
+                state.loading = true
+                state.posts = []
+            },
+        [findRestaurantPostsThunk.rejected]:
             (state, action) => {
                 state.loading = false
                 state.error = action.error

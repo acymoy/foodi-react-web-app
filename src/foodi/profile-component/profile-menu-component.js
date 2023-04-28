@@ -15,7 +15,7 @@ const ProfileMenu = () => {
         <ul className="nav nav-pills flex-column">
             <li className="nav-item">
                 <Link to={`${id}/reviews`} className={`nav-link ${active === undefined || active === 'reviews' ? 'active' : ''}`}>
-                    Reviews
+                    Posts
                 </Link>
             </li>
             <li className="nav-item">

@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { getPlaceDetailsThunk } from "../../services/places-thunks";
 
 const DetailComponent = () => {
-    const API_KEY = 'AIzaSyDdGBlMszZ6s_-x2j6ivHD9klhoy2GwLUQ'
+    const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
 
     const { placeID } = useParams();
     console.log('placeId: ' + placeID)
@@ -33,7 +33,7 @@ const DetailComponent = () => {
         photos: place.photos
     }
 
-    const photoRef = placeObject.photos ? placeObject.photos[0].photo_reference : ''
+    const photoRef = placeObject.photos !== undefined ? placeObject.photos[0].photo_reference : ''
     const photoLink = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoRef}&key=${API_KEY}`
 
 

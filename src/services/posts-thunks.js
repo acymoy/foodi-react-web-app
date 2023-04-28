@@ -6,6 +6,13 @@ export const findAllPostsThunk = createAsyncThunk(
     await service.getPosts()
 )
 
+export const findRestaurantPostsThunk = createAsyncThunk(
+    'posts/findRestaurantPosts', async (userID) => {
+        const posts = await service.findRestaurantPosts(userID)
+        return posts
+    }
+)
+
 export const findFollowedPostsThunk = createAsyncThunk(
     'posts/findFollowedPosts', async (userID) => {
         console.log('posts-thunk: findfollowedpostsThunk')

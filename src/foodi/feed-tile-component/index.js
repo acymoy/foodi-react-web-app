@@ -41,7 +41,7 @@ const FeedTileComponent = (post) => {
                             </div>
                         </div>
                         <div className='col-4'>
-                            <img src={post.restaurantAvatar} alt="Restaurant Picture" className = 'img-fluid'/>
+                            <img src={post.restaurantAvatar} alt="Restaurant Picture" className = 'img-fluid rounded-circle'/>
                         </div>
                         <div className="media">
                                 <p className="mb-0">{post.title}</p>

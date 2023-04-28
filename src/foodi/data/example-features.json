@@ -6,15 +6,6 @@
         "description": "Pesto is the mother sauce of modern cuisine and is equally at home on pasta, pizza, or even meat",
         "dob": "4.28.23",
         "banner": "https://www.saveur.com/saveur-newsletter-signup-bg.jpg?auto=webp&optimize=high&quality=70&width=1920"
-    }, 
-    {
-        "_id": 234,
-        "title": "On Fusion, Forced Migration, and Somali Food",
-        "author": "Ifrah F. Ahmed",
-        "description": "How Somali Food in the diapora holds the history of forced migration",
-        "dob": "4.17.23",
-        "banner": "https://cdn.vox-cdn.com/thumbor/iUgGfSyY08UD5Qm2kNwk42qz4cw=/0x0:1940x1358/920x613/filters:focal(815x524:1125x834):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/72188000/Captura_de_Pantalla_2023_02_24_a_la_s__17.30.30.0.png"
-
     },
     {
         "_id": 345,
@@ -23,5 +14,13 @@
         "description": "Where to find wood-fired sourdough bagels, egg rolls, braised pork belly, and more of Ottawa's best food",
         "dob": "4.27.23",
         "banner": "https://cdn.vox-cdn.com/thumbor/p4nrxCrL3nmq_J2cxFbevKIX3gU=/0x0:2048x1748/620x465/filters:focal(776x970:1102x1296):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/54841615/Ottawa_Bagel.14.jpg"
+    },
+    {
+        "_id": 234,
+        "title": "On Fusion, Forced Migration, and Somali Food",
+        "author": "Ifrah F. Ahmed",
+        "description": "How Somali Food in the diapora holds the history of forced migration",
+        "dob": "4.17.23",
+        "banner": "https://cdn.vox-cdn.com/thumbor/iUgGfSyY08UD5Qm2kNwk42qz4cw=/0x0:1940x1358/920x613/filters:focal(815x524:1125x834):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/72188000/Captura_de_Pantalla_2023_02_24_a_la_s__17.30.30.0.png"
     }
 ]

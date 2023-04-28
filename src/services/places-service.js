@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_BASE = 'https://maps.googleapis.com/maps/api/place'
-const API_KEY = 'AIzaSyDdGBlMszZ6s_-x2j6ivHD9klhoy2GwLUQ'
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
 
 export const getPlaces = async (query) => {
     const response = await axios.get(`${API_BASE}/findplacefromtext/json?input=${query}&inputtype=textquery&fields=photos,formatted_address,name,rating,place_id&key=${API_KEY}`)
