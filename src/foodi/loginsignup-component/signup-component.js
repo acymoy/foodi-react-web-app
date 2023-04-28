@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+// Thunk imports
+import { registerThunk } from "../../services/auth-thunks";
 
 // Component imports
-
 import IndividualSignup from "./individual-signup-component";
 import RestaurantSignup from "./restaurant-signup-component";
 

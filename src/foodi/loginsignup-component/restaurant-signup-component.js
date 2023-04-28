@@ -1,24 +1,44 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+// Thunk imports
+import {registerThunk} from '../../services/auth-thunks';
 
 const RestaurantSignup = () => {
     const [formData, setFormData] = useState({
-        restaurantName: '',
+        name: '',
         email: '',
         password: '',
-        openDate: '',
+        dob: '',
+        location: '',
+        following: [],
+        followers: [],
         cuisine: '',
-        address: '',
-        phoneNumber: '',
-        website: ''
+        phone: '',
+        website: '',
+        role: 'RESTAURANT'
     });
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+        //console.log('handle change', name, value)
         setFormData({ ...formData, [name]: value });
+        //console.log(formData)
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = async (event) => {
+        try {
+            event.preventDefault();
+            await dispatch(registerThunk(formData))
+            navigate('/profile')
+        } catch (e) {
+            alert(e)
+        }
+        
         // Handle form submission logic here
         console.log(formData);
     };
@@ -26,14 +46,14 @@ const RestaurantSignup = () => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-group">
-                <label htmlFor="restaurantName">Restaurant Name</label>
+                <label htmlFor="name">Restaurant Name</label>
                 <input
                     type="text"
                     className="form-control"
-                    id="restaurantName"
-                    name="restaurantName"
+                    id="name"
+                    name="name"
                     placeholder='Enter restaurant name'
-                    value={formData.restaurantName}
+                    value={formData.name}
                     onChange={handleChange}
                 />
             </div>
@@ -61,14 +81,14 @@ const RestaurantSignup = () => {
                     placeholder="Password" required />
             </div>
             <div className="form-group">
-                <label htmlFor="openDate">Open Date</label>
+                <label htmlFor="dob">Open Date</label>
                 <input
                     type="date"
                     className="form-control"
-                    id="openDate"
-                    name="openDate"
+                    id="dob"
+                    name="dob"
                     placeholder='Enter open date'
-                    value={formData.openDate}
+                    value={formData.dob}
                     onChange={handleChange}
                 />
             </div>
@@ -85,26 +105,26 @@ const RestaurantSignup = () => {
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="address">Address</label>
+                <label htmlFor="location">Address</label>
                 <input
                     type="text"
                     className="form-control"
-                    id="address"
-                    name="address"
+                    id="location"
+                    name="location"
                     placeholder='Enter address'
-                    value={formData.address}
+                    value={formData.location}
                     onChange={handleChange}
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="phoneNumber">Phone Number</label>
+                <label htmlFor="phone">Phone Number</label>
                 <input
                     type="text"
                     className="form-control"
-                    id="phoneNumber"
-                    name="phoneNumber"
+                    id="phone"
+                    name="phone"
                     placeholder='Enter phone number'
-                    value={formData.phoneNumber}
+                    value={formData.phone}
                     onChange={handleChange}
                 />
             </div>

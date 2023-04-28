@@ -6,30 +6,28 @@ import { useLocation } from "react-router-dom";
 const ProfileMenu = () => {
     const { pathname } = useLocation();
     const paths = pathname.split('/');
-    const active = paths[3];
-    const id = paths[2];
-    //console.log('id', id)
-    //console.log('active', active)
+    const active = paths[2];
+    console.log('active', active)
     
     return (
         <ul className="nav nav-pills flex-column">
             <li className="nav-item">
-                <Link to={`${id}/reviews`} className={`nav-link ${active === undefined || active === 'reviews' ? 'active' : ''}`}>
+                <Link to='reviews' className={`nav-link ${active === undefined || active === 'reviews' ? 'active' : ''}`}>
                     Reviews
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to={`${id}/lists`} className={`nav-link ${active === 'lists' ? 'active' : ''}`}>
+                <Link to='lists' className={`nav-link ${active === 'lists' ? 'active' : ''}`}>
                     Lists
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to={`${id}/followers`} className={`nav-link ${active === 'followers' ? 'active' : ''}`}>
+                <Link to='followers' className={`nav-link ${active === 'followers' ? 'active' : ''}`}>
                     Followers
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to={`${id}/following`} className={`nav-link ${active === 'following' ? 'active' : ''}`}>
+                <Link to='following' className={`nav-link ${active === 'following' ? 'active' : ''}`}>
                     Following
                 </Link>
             </li>

@@ -10,10 +10,17 @@ export const createPost = async (post) => {
     return response.data
 }
 
-// filters the posts -> sends http request to server and gets response
-// filters by user ID (to obtain IDs of followed users)
+// gets posts by user uid
 export const findPost = async (userID) => {
-    const response = await axios.get(POST_API, ids)
+    //console.log(`${POST_API}/user/${userID}`)
+    const response = await axios.get(`${POST_API}/user/${userID}`)
+    const posts = response.data
+    return posts
+}
+
+// gets posts by followed users
+export const findFollowedPosts = async (userID) => {
+    const response = await axios.get(`${POST_API}/followed/${userID}`)
     const posts = response.data
     return posts
 }

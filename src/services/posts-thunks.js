@@ -6,6 +6,14 @@ export const findAllPostsThunk = createAsyncThunk(
     await service.getPosts()
 )
 
+export const findFollowedPostsThunk = createAsyncThunk(
+    'posts/findFollowedPosts', async (userID) => {
+        console.log('posts-thunk: findfollowedpostsThunk')
+        const posts = await service.findFollowedPosts(userID)
+        return posts
+    }
+)
+
 export const deletePostThunk = createAsyncThunk(
     'posts/deletePost',
     async (postID) => {

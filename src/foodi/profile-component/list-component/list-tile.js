@@ -16,7 +16,7 @@ const ListTile = (listObject) => {
                     <p className='card-text'>{list.description}</p>
                 </div>
                 <div className='col-md-2 d-flex align-items-center justify-content-end'>
-                    <i class="bi bi-arrow-right"></i>
+                    <i className="bi bi-arrow-right"></i>
                 </div>
             </Link>
         </div>

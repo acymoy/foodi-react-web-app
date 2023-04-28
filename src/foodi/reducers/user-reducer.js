@@ -1,84 +1,81 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { getListsThunk, updateListThunk, deleteListThunk, createListThunk }
-    from '../../services/list-thunks';
+import { createSlice } from "@reduxjs/toolkit";
+
+import { getUserThunk, updateUserThunk, createUserThunk, getUsersThunk }
+    from '../../services/user-thunks';
 
 const initialState = {
-    items: [],
+    user: [],
     loading: false
 }
 
-const listSlice = createSlice({
-    name: 'lists',
-    initialState,
+const userSlice = createSlice({
+    name: 'users',
+    initialState: initialState,
     reducers: {},
     extraReducers: {
-        [getListsThunk.pending]:
+        [getUserThunk.pending]:
             (state) => {
                 state.loading = true
-                state.lists = []
+                state.user = []
             },
-        [getListsThunk.rejected]:
+        [getUserThunk.rejected]:
             (state, action) => {
                 state.loading = false
                 state.error = action.error
             },
-        [getListsThunk.fulfilled]:
+        [getUserThunk.fulfilled]:
+            (state, { payload }) => {
+                console.log('getUserThunk fulfilled')
+                state.loading = false
+                state.user = payload
+            },
+        
+        [getUsersThunk.pending]:
+            (state) => {
+                state.loading = true
+                state.followage = []
+            },
+        [getUsersThunk.rejected]:
+            (state, action) => {
+                state.loading = false
+                state.error = action.error
+            },
+        [getUsersThunk.fulfilled]:
             (state, { payload }) => {
                 state.loading = false
-                state.lists = payload
+                state.followage = payload
             },
 
-        [createListThunk.pending]:
+        [createUserThunk.pending]:
             (state) => {
                 state.loading = true
             },
-        [createListThunk.rejected]:
+        [createUserThunk.rejected]:
             (state, action) => {
                 state.loading = false
                 state.error = action.error
             },
-        [createListThunk.fulfilled]:
+        [createUserThunk.fulfilled]:
             (state, { payload }) => {
                 state.loading = false
-                state.lists.push(payload)
+                state.users.push(payload)
             },
 
-        [deleteListThunk.pending]:
+        [updateUserThunk.pending]:
             (state) => {
                 state.loading = true
             },
-        [deleteListThunk.rejected]:
+        [updateUserThunk.rejected]:
             (state, action) => {
                 state.loading = false
                 state.error = action.error
             },
-        [deleteListThunk.fulfilled]:
+        [updateUserThunk.fulfilled]:
             (state, { payload }) => {
                 state.loading = false
-                state.lists = state.lists.filter(t => t._id !== payload)
-            },
-
-        [updateListThunk.pending]:
-            (state) => {
-                state.loading = true
-            },
-        [updateListThunk.rejected]:
-            (state, action) => {
-                state.loading = false
-                state.error = action.error
-            },
-        [updateListThunk.fulfilled]:
-            (state, { payload }) => {
-                state.loading = false
-                const i = state.lists.findIndex((list) => list._id === payload._id)
-                state.lists[i] = {
-                    ...state.lists[i],
-                    ...payload
-                }
+                state.users = state.users.map(t => t._id === payload._id ? payload : t)
             }
     }
+})
 
-}
-);
-
-export default listSlice.reducer;
+export default userSlice.reducer;

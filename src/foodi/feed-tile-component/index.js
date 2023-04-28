@@ -1,6 +1,8 @@
 import React from "react";
 import DOMPurify from 'dompurify';
 
+import { Link } from "react-router-dom";
+
 // post object should have the following properties:
 // name, profilePicture, title, text, rating, image
 const FeedTileComponent = (post) => {
@@ -28,18 +30,18 @@ const FeedTileComponent = (post) => {
                         <div className = ' col-8'>
                             <div className='ratio ratio-1x1 rounded-circle overflow-hidden mb-2'
                                 style={{ height: '50%', width: '30%' }}>
-                                <img src={post.profilePicture} alt="Profile Picture"
+                                <img src={post.userAvatar} alt="Profile Picture"
                                     className="mr-3 border rounded-circle"
                                     style={{ objectFit: 'cover', objectPosition: 'center' }} />
                             </div>
                             <div className="media-body">
-                                <h5 className="mt-0">{post.name}</h5>
+                                <div className="mt-0"><Link to={`/profile/${post.user}`}>{post.name}</Link> reviewed <Link to={`/profile/${post.restaurant}`}>{post.restaurantName}</Link></div>
                                 <p className="mb-0" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(starNum) }}>
                                 </p>
                             </div>
                         </div>
                         <div className='col-4'>
-                            <img src={post.restaurant_picture} alt="Restaurant Picture" className = 'img-fluid'/>
+                            <img src={post.restaurantAvatar} alt="Restaurant Picture" className = 'img-fluid'/>
                         </div>
                         <div className="media">
                                 <p className="mb-0">{post.title}</p>
